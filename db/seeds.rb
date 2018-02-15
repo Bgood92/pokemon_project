@@ -1,7 +1,41 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+PokemonType.delete_all
+Pokemon.delete_all
+Generation.delete_all
+
+csv_file = Rails.root + 'db/pokemon.csv'
+
+options = { file_encoding: 'iso-8859-1' }
+
+all_pokemon = SmarterCSV.process(csv_file, options)
+
+all_pokemon.each do |p|
+  csv_types = "#{p[:type_1]}, #{p[:type_2]}".split(',').map(&:strip).compact
+  csv_generation = p[:generation]
+  csv_region = p[:region]
+
+  p.delete(:type_1)
+  p.delete(:type_2)
+  p.delete(:generation)
+  p.delete(:region)
+  p.delete(:legendary)
+
+  generation = Generation.find_or_create_by(gen: csv_generation, region: csv_region)
+
+  pokemon = Pokemon.create(
+      pokedex: p[:pokedex],
+      name: p[:name],
+      stats_total: p[:stats_total],
+      hp: p[:hp],
+      attack: p[:attack],
+      defense: p[:defense],
+      sp_atk: p[:sp_atk],
+      sp_def: p[:sp_def],
+      speed: p[:speed],
+      generation: generation
+  )
+
+  csv_types.each do |csv_type|
+    type = Type.find_or_create_by(name: csv_type)
+    PokemonType.create(pokemon: pokemon, type: type)
+  end
+end
