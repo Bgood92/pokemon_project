@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215173239) do
+ActiveRecord::Schema.define(version: 20180215173838) do
 
   create_table "generations", force: :cascade do |t|
     t.integer "gen"
     t.string "region"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pokemon_types", force: :cascade do |t|
+    t.integer "pokemon_id"
+    t.integer "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pokemon_id"], name: "index_pokemon_types_on_pokemon_id"
+    t.index ["type_id"], name: "index_pokemon_types_on_type_id"
   end
 
   create_table "pokemons", force: :cascade do |t|
@@ -31,6 +40,8 @@ ActiveRecord::Schema.define(version: 20180215173239) do
     t.integer "speed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "generation_id"
+    t.index ["generation_id"], name: "index_pokemons_on_generation_id"
   end
 
   create_table "types", force: :cascade do |t|
