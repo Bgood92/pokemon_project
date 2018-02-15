@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pokedex:</strong>
+  <%= @pokemon.pokedex %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pokemon.name %>
+</p>
+
+<p>
+  <strong>Stats total:</strong>
+  <%= @pokemon.stats_total %>
+</p>
+
+<p>
+  <strong>Hp:</strong>
+  <%= @pokemon.hp %>
+</p>
+
+<p>
+  <strong>Attack:</strong>
+  <%= @pokemon.attack %>
+</p>
+
+<p>
+  <strong>Defense:</strong>
+  <%= @pokemon.defense %>
+</p>
+
+<p>
+  <strong>Sp atk:</strong>
+  <%= @pokemon.sp_atk %>
+</p>
+
+<p>
+  <strong>Sp def:</strong>
+  <%= @pokemon.sp_def %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @pokemon.speed %>
+</p>
+
+<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
+<%= link_to 'Back', pokemons_path %>

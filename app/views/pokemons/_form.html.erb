@@ -1,0 +1,62 @@
+<%= form_with(model: pokemon, local: true) do |form| %>
+  <% if pokemon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pokemon.errors.count, "error") %> prohibited this pokemon from being saved:</h2>
+
+      <ul>
+      <% pokemon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pokedex %>
+    <%= form.number_field :pokedex, id: :pokemon_pokedex %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :pokemon_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stats_total %>
+    <%= form.number_field :stats_total, id: :pokemon_stats_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hp %>
+    <%= form.number_field :hp, id: :pokemon_hp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attack %>
+    <%= form.number_field :attack, id: :pokemon_attack %>
+  </div>
+
+  <div class="field">
+    <%= form.label :defense %>
+    <%= form.number_field :defense, id: :pokemon_defense %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sp_atk %>
+    <%= form.number_field :sp_atk, id: :pokemon_sp_atk %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sp_def %>
+    <%= form.number_field :sp_def, id: :pokemon_sp_def %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speed %>
+    <%= form.number_field :speed, id: :pokemon_speed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
