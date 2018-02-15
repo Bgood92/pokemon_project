@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gen:</strong>
+  <%= @generation.gen %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @generation.region %>
+</p>
+
+<%= link_to 'Edit', edit_generation_path(@generation) %> |
+<%= link_to 'Back', generations_path %>

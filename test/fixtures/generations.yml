@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gen: 1
+  region: MyString
+
+two:
+  gen: 1
+  region: MyString
