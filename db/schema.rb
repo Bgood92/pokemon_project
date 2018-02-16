@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215173838) do
+ActiveRecord::Schema.define(version: 20180216011407) do
 
   create_table "generations", force: :cascade do |t|
     t.integer "gen"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20180215173838) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "generation_id"
+    t.boolean "legendary"
     t.index ["generation_id"], name: "index_pokemons_on_generation_id"
   end
 
