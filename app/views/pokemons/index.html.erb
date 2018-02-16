@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>National Pokedex</h1>
+<h2>National Pokedex</h2>
 
 <table>
   <thead>
@@ -18,7 +18,6 @@
         <td><%= pokemon.name %></td>
         <td><%= link_to 'Show', pokemon %></td>
         <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
-        <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
