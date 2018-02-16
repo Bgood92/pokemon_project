@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Generations</h1>
+<h2>Pokemon Generations</h2>
 
 <table>
   <thead>
     <tr>
-      <th>Gen</th>
+      <th>Generation</th>
       <th>Region</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +18,7 @@
         <td><%= generation.region %></td>
         <td><%= link_to 'Show', generation %></td>
         <td><%= link_to 'Edit', edit_generation_path(generation) %></td>
-        <td><%= link_to 'Destroy', generation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', generation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

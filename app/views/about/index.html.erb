@@ -1,8 +1,8 @@
 <h2>About This Website</h2>
 
-<p>This is a website built around Pokemon and contains information on all Pokemon on the national Pokedex.
-  A set of data was parsed from a .csv file and stored within a SQLLite database.</p>
-<p>Three tables and one join table exist within the database:</p>
+<p>Pokemon Data Project is a school project I have built using Ruby on Rails. It revolves around Pokemon and contains information on every Pokemon on the national Pokedex.
+   I parsed data from a .csv file pulled from Github and stored it within models I have created.</p>
+<p>There are three tables as well as one join table within the database:</p>
 <ul>
   <li>Pokemon</li>
   <li>Generation</li>
@@ -10,12 +10,12 @@
   <li>PokemonType</li>
 </ul>
 <p>Pokemon contains a record for every Pokemon in the national Pokedex and holds their entry number, name, and
-  all base stats</p>
-<p>The table associated with Generation contains rows for every generation and their respective regions.</p>
-<p>The Type model contains records for every Pokemon type and their associated names.</p>
-<p>Finally, we have the PokemonType table that resolves the many-to-many relationship between Pokemon and Type
-  since a Pokemon can have more than one type and a type belongs to many Pokemon</p>
+   base stats.</p>
+<p>The table associated with Generation contains a row for every generation and their respective regions.</p>
+<p>The Type model contains records for every Pokemon type with their associated names.</p>
+<p>Lastly, the PokemonType table resolves a many-to-many relationship between Pokemon and Type
+  since a Pokemon generally can have one or two types and a type belongs to many Pokemon.</p>
 
 <p>Here is an ERD illustrating the structure of the database:</p>
 
-<img alt="" src=""/>
+<%= image_tag 'pokemon_erd.PNG', width: 700 %>

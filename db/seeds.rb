@@ -17,7 +17,6 @@ all_pokemon.each do |p|
   p.delete(:type_2)
   p.delete(:generation)
   p.delete(:region)
-  p.delete(:legendary)
 
   generation = Generation.find_or_create_by(gen: csv_generation, region: csv_region)
 
@@ -31,6 +30,7 @@ all_pokemon.each do |p|
       sp_atk: p[:sp_atk],
       sp_def: p[:sp_def],
       speed: p[:speed],
+      legendary: p[:legendary],
       generation: generation
   )
 
